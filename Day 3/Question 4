@@ -1,0 +1,14 @@
+public class Main {
+    public static void main(String[] args) {
+        int sum = addNumbers(10);
+        System.out.println("Sum of numbers from 1 to 10: " + sum);
+    }
+    
+    public static int addNumbers(int num) {
+        if (num == 1) {
+            return 1;
+        } else {
+            return num + addNumbers(num - 1);
+        }
+    }
+}
