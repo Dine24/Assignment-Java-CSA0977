@@ -1,0 +1,15 @@
+public class Main {
+    public static void main(String[] args) {
+        // Widening Casting
+        int num1 = 10;
+        double num2 = num1; // automatic casting from int to double
+        System.out.println("num1: " + num1);
+        System.out.println("num2: " + num2);
+        
+        // Narrowing Casting
+        double num3 = 3.14159;
+        int num4 = (int) num3; // manual casting from double to int
+        System.out.println("num3: " + num3);
+        System.out.println("num4: " + num4);
+    }
+}
