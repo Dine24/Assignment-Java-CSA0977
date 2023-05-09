@@ -1,0 +1,37 @@
+
+
+public class FinishOrder {
+    public static void main(String[] args) {
+        String[] runners = {"Mike", "Paul", "Brian", "Liam", "Owen"};
+        int[] finishOrder = {0, 0, 0, 0, 0};
+
+        // Assigning positions based on given information
+        finishOrder[0] = 1; // Mike finished ahead of Paul
+        finishOrder[1] = finishOrder[2] = 2; // Paul and Brian finished before Liam
+
+        // Checking if Owen finished last
+        boolean isOwenLast = true;
+        for (int i = 0; i < finishOrder.length; i++) {
+            if (finishOrder[i] == 0) {
+                finishOrder[i] = 5; // Owen did not finish last
+                isOwenLast = false;
+                break;
+            }
+        }
+
+        // Finding the last to finish
+        if (!isOwenLast) {
+            int lastPosition = 0;
+            for (int i = 0; i < finishOrder.length; i++) {
+                if (finishOrder[i] == 0) {
+                    lastPosition = i + 1;
+                    break;
+                }
+            }
+
+            System.out.println("The last to finish is: " + runners[lastPosition - 1]);
+        } else {
+            System.out.println("Owen is the last to finish.");
+        }
+    }
+}
